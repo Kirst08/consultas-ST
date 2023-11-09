@@ -24,6 +24,14 @@ h1, h2, h3, h4, h5, h6 {
     overflow: hidden; /* Evita que los círculos se salgan del bannerTigo */
     position: relative;
 }
+.person {
+    position: absolute;
+    top: 50%;
+    left: 0; /* Ajusta la posición a la izquierda */
+    transform: translateY(-50%);
+    max-width: 100%; /* Hace que la imagen sea responsiva */
+    max-height: 80%; /* Ajusta según tus necesidades */
+}
 
 .dot {
     background-color: #009EF7;
@@ -60,6 +68,15 @@ h1, h2, h3, h4, h5, h6 {
 .dot:nth-child(4) {
     bottom: 25%;
     right: 0;
+}
+
+.logos {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    max-width: 100%; /* Hace que la imagen sea responsiva */
+    max-height: 80%; /* Ajusta según tus necesidades */
 }
 
 .dot:nth-child(5) {
@@ -220,4 +237,20 @@ h1, h2, h3, h4, h5, h6 {
     #progressbar-2 li.active:before,
     #progressbar-2 li.active:after {
     background: #6520ff;
+    }
+
+    @media (max-width: 767px) {
+        .logos {
+            position: relative;
+            max-width: 100%;
+            max-height: none; /* Restaurar el valor predeterminado */
+        }
+        .person
+        {
+            display: none;
+        }
+    
+        .dot {
+            display: none; /* Oculta los puntos en dispositivos móviles y tablets */
+        }
     }
